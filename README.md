@@ -29,12 +29,12 @@ debt-api/
 
 ├── README.md
 
-└── run.py
+└── main.py
 
 app/ directory:
 
 __init__.py: Initializes the Flask application and sets up any necessary configurations.
-models.py: Defines the database models and schema for debt and user entities using a library like SQLAlchemy.
+models.py: Defines the database models and schema for debt (SQLAlchemy).
 routes.py: Contains the API routes/endpoints, where you define the functions handling various HTTP requests and responses.
 auth.py: Provides authentication-related functionality, such as user registration, login, and authorization checks.
 utils.py: Contains utility functions or helper methods used throughout the application.
@@ -53,6 +53,6 @@ Specifies files and directories that should be ignored by Git when committing an
 README.md file:
 
 Contains documentation and instructions for setting up and using your debt tracking API.
-run.py file:
+main.py file:
 
-Acts as the entry point of your application. It initializes the Flask app and runs it using the Flask development server.
+Acts as the entry point of the application. It initializes the Flask app and runs it using the Flask development server.
