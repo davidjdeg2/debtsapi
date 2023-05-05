@@ -4,18 +4,31 @@ I am very kind to my debtees.
 This API implementation on an Ubuntu Server running will return the current amount of debt owed to Knox Seabolt, and for an authenticated user, they can add or modify the array. It utilizes Flask, a python micro web framework.
 
 debt-api/
+
 ├── app/
+
 │   ├── __init__.py
+
 │   ├── models.py
+
 │   ├── routes.py
+
 │   ├── auth.py
+
 │   └── utils.py
+
 ├── tests/
+
 │   └── test_routes.py
+
 ├── config.py
+
 ├── requirements.txt
+
 ├── .gitignore
+
 ├── README.md
+
 └── run.py
 
 app/ directory:
