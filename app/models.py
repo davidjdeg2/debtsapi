@@ -1,7 +1,15 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+import warnings
 
 db = SQLAlchemy()
+
+#anti-crust function
+def number_verifier(amount):
+    if isinstance(amount, (int, float)):
+        return return "{:.2f}".format(amount)
+    else
+        warnings.warn("expected input is a number", RuntimeWarning)
 
 class Debt(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,13 +21,14 @@ class Debt(db.Model):
     def __repr__(self):
         return f'<Debt {self.id}>'
 
-    def add_to_debt(self, amount):
-        self.amount_owed += amount
+    def update_debt(self, amount):
+        self.amount_owed += number_verifier(amount)
         self.date_incurred = datetime.utcnow()
-
-    def subtract_from_debt(self, amount):
-        self.amount_owed -= amount
+        
+    def set_debt(self, amount):
+        self.amount_owed = number_verifier(amount)
         self.date_incurred = datetime.utcnow()
 
     def calculate_interest(self, months):
-        return self.amount_owed * (1 + self.interest_rate) ** months - self.amount_owed
+        #string format to round the number to the nearest 2nd decimal place then add a cent to round up
+        return "{:.2f}".format(self.amount_owed * (1 + self.interest_rate) ** months - self.amount_owed) + 0.01
