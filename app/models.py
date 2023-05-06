@@ -30,5 +30,5 @@ class Debt(db.Model):
         self.date_incurred = datetime.utcnow()
 
     def calculate_interest(self, months):
-        #string format to round the number to the nearest 2nd decimal place then add a cent to round up
-        return "{:.2f}".format(self.amount_owed * (1 + self.interest_rate) ** months - self.amount_owed) + 0.01
+    # string format to round the number to the nearest 2nd decimal place
+    return round(self.amount_owed * (1 + self.interest_rate) ** months - self.amount_owed, 2)
