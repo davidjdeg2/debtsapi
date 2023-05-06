@@ -10,20 +10,35 @@ Project Structure
 arduino
 Copy code
 debts-api/
+
 ├── app/
+
 │   ├── __init__.py
+
 │   ├── auth.py
+
 │   ├── models.py
+
 │   ├── routes.py
+
 │   ├── user.py
+
 │   └── utils.py
+
 ├── tests/
+
 │   └── test_routes.py
+
 ├── config.py
+
 ├── requirements.txt
+
 ├── .gitignore
+
 ├── README.md
+
 └── main.py
+
 app/
 The app/ directory contains the core application files:
 
