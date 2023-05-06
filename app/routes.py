@@ -1,10 +1,19 @@
 from flask import jsonify, request
 from .models import Debt, db
 
-@app.route('/debts', methods=['GET'])
-def get_debts():
-    debts = Debt.query.all()
-    return jsonify([debt.__dict__ for debt in debts])
+@app.route('/debt/<int:id>', methods=['GET'])
+def get_debt(id):
+    debt = Debt.query.get(id)
+    if not debt:
+        return jsonify({'error': 'Debt not found'}), 404
+    total_owed = calculate_interest(debt.amount_owed, debt.interest_rate)
+    return jsonify({
+        'id': debt.id,
+        'debtor': debt.debtor,
+        'amount_owed': debt.amount_owed,
+        'interest_rate': debt.interest_rate,
+        'total_owed': total_owed
+    }), 200
 
 @app.route('/debts/<int:debt_id>/add', methods=['PUT'])
 def add_to_debt(debt_id):
