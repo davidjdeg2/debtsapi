@@ -39,4 +39,4 @@ def calculate_interest(debt_id):
     data = request.args
     months = int(data.get('months', 1))
     interest = debt.calculate_interest(months)
-    return jsonify
+    return jsonify({'interest': interest})
