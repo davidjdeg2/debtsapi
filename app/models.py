@@ -4,7 +4,7 @@ import warnings
 
 db = SQLAlchemy()
 
-#anti-crust function
+#anti-crust/de-sus function
 def number_verifier(amount):
     if isinstance(amount, (int, float)):
         return return "{:.2f}".format(amount)
@@ -12,7 +12,7 @@ def number_verifier(amount):
         warnings.warn("expected input is a number", RuntimeWarning)
 
 class Debt(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)num
     debtor = db.Column(db.String(255), nullable=False)
     amount_owed = db.Column(db.Float, nullable=False)
     interest_rate = db.Column(db.Float, nullable=False, default=0.02)
