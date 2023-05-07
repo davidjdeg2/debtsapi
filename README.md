@@ -1,14 +1,17 @@
 DebtsAPI
-DebtsAPI is a RESTful API built using Flask and SQLite that allows users to track their debts and manage them.
+
+DebtsAPI is a RESTful API built using Flask, SQLite, and apache2 allowing users to track their debts and manage them.
 
 Features
+
 Allows users to view, add, and modify debts
 Calculates interest rate compounding at a rate of 2% per month
 Supports user authentication and authorization
 Includes unit tests for the API routes and functionality
+
+
 Project Structure
-arduino
-Copy code
+
 debts-api/
 
 ├── app/
@@ -39,6 +42,7 @@ debts-api/
 
 └── main.py
 
+
 app/
 The app/ directory contains the core application files:
 
@@ -66,27 +70,48 @@ The README.md file contains documentation and instructions for setting up and us
 main.py
 The main.py file acts as the entry point of the application. It initializes the Flask app and runs it using the Flask development server.
 
+
 Usage
+
 Clone the repository to your local machine.
+
 Install the required dependencies using pip install -r requirements.txt.
+
 Create the database by running python.
+
 Run the application using python main.py.
+
 Use the API endpoints to interact with the DebtsAPI.
+
 API Endpoints
+
+
 Debt Management
+
 HTTP Method	Endpoint	Description
+
 GET	/api/debts	Retrieves a list of all debts.
+
 GET	/api/debts/{debt_id}	Retrieves a specific debt.
+
 POST	/api/debts	Adds a new debt.
+
 PUT	/api/debts/{debt_id}	Updates an existing debt.
+
 DELETE	/api/debts/{debt_id}	Deletes an existing debt.
+
+
 User Management
+
 HTTP Method	Endpoint	Description
+
 POST	/api/users	Registers a new user.
+
 POST	/api/login	Logs in an existing user.
+
+
 License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-
 
 
