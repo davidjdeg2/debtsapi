@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from .models import Debt, db
+from models import Debt, db
 
 @app.route('/debt/<int:id>', methods=['GET'])
 def get_debt(id):
