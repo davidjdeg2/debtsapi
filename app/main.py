@@ -1,6 +1,6 @@
 from flask import Flask
-from .models import db
-from .auth import create_auth_blueprint
+from models import db
+from auth import create_auth_blueprint
 
 app = Flask(__name__)
 
