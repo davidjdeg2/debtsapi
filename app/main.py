@@ -1,6 +1,5 @@
 from flask import Flask
 from models import db
-from routes import api_bp
 from auth import auth
 
 app = Flask(__name__)
