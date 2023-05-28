@@ -75,6 +75,8 @@ Usage
 
 Clone the repository to your local machine.
 
+Make a virtual enviroment for this project.
+
 Install the required dependencies using pip install -r requirements.txt.
 
 Create the database by running python.
