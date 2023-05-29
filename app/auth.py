@@ -16,3 +16,4 @@ def create_auth_blueprint(app):
         # At this point, the user has been authenticated successfully
         # You might generate and return a JWT token here for subsequent authenticated requests
         return jsonify({'message': 'Login successful'}), 200
+    return auth_bp
