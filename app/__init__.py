@@ -15,7 +15,7 @@ def create_app(config_name):
     migrate.init_app(app, db)
     auth.init_app(app)
 
-    from .routes import api_bp
+    from routes import api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
 
     return app
