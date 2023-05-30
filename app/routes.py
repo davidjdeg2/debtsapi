@@ -42,3 +42,7 @@ def calculate_interest(debt_id):
     months = int(data.get('months', 1))
     interest = debt.calculate_interest(months)
     return jsonify({'interest': interest})
+
+@api_bp.route('/test', methods=['GET'])
+@def test_api():
+    return "Success"
